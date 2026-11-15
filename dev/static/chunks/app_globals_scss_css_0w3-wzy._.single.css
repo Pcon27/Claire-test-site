@@ -1,0 +1,75 @@
+/* [project]/app/globals.scss.css [app-client] (css) */
+@font-face {
+  font-family: Walton TFF;
+  src: url("/fonts/Walton.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg1: #fcf7ff;
+  --bg2: #694b84;
+  --bg3: #926cb4;
+  --bg4: #acacac;
+  --bg5: #3f1f5b;
+  --text1: #926cb4;
+  --text2: #acacac;
+  --text3: #fcf7ff;
+  --text4: #694b84;
+  --text5: #3f1f5b;
+  --border1: #926cb4;
+  --border2: #acacac;
+  --border3: #fcf7ff;
+  --border4: #694b84;
+  --border5: #3f1f5b;
+  --link1: #926cb4;
+}
+
+.dark {
+  --bg1: #926cb4;
+  --bg2: #acacac;
+  --bg3: #fcf7ff;
+  --bg4: #694b84;
+  --bg5: #3f1f5b;
+  --text1: #fcf7ff;
+  --text2: #694b84;
+  --text3: #926cb4;
+  --text4: #acacac;
+  --text5: #3f1f5b;
+  --border1: #fcf7ff;
+  --border2: #694b84;
+  --border3: #926cb4;
+  --border4: #acacac;
+  --border5: #3f1f5b;
+  --link1: #fcf7ff;
+}
+
+html, body {
+  max-width: 100vw;
+  margin: 0;
+  overflow-x: clip;
+}
+
+body {
+  color: var(--text1);
+  background: var(--bg3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
+  font-family: Walton TFF, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --lightningcss-light: ;
+    --lightningcss-dark: initial;
+    color-scheme: dark;
+  }
+}
+
+/*# sourceMappingURL=app_globals_scss_css_0w3-wzy._.single.css.map*/

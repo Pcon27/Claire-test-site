@@ -1,0 +1,364 @@
+/* [project]/app/components/text/text.module.scss.module.css [app-client] (css) */
+@font-face {
+  font-family: Walton;
+  src: url("/fonts/Walton.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-module-scss-module__CwSCVG__textColor0 {
+  color: #0000;
+}
+
+.text-module-scss-module__CwSCVG__textColor1 {
+  color: var(--text1);
+}
+
+.text-module-scss-module__CwSCVG__textColor2 {
+  color: var(--text2);
+}
+
+.text-module-scss-module__CwSCVG__textColor3 {
+  color: var(--text3);
+}
+
+.text-module-scss-module__CwSCVG__textColor4 {
+  color: var(--text4);
+}
+
+.text-module-scss-module__CwSCVG__textColor5 {
+  color: var(--text5);
+}
+
+.text-module-scss-module__CwSCVG__hoverText0 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText0:hover {
+  color: #0000;
+}
+
+.text-module-scss-module__CwSCVG__hoverText1 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText1:hover {
+  color: var(--text1);
+}
+
+.text-module-scss-module__CwSCVG__hoverText2 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText2:hover {
+  color: var(--text2);
+}
+
+.text-module-scss-module__CwSCVG__hoverText3 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText3:hover {
+  color: var(--text3);
+}
+
+.text-module-scss-module__CwSCVG__hoverText4 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText4:hover {
+  color: var(--text4);
+}
+
+.text-module-scss-module__CwSCVG__hoverText5 {
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hoverText5:hover {
+  color: var(--text5);
+}
+
+.text-module-scss-module__CwSCVG__textSize0 {
+  font-size: 0;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize0 {
+    font-size: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize0 {
+    font-size: 0;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize0, .text-module-scss-module__CwSCVG__textSize1, .text-module-scss-module__CwSCVG__textSize2, .text-module-scss-module__CwSCVG__textSize3, .text-module-scss-module__CwSCVG__textSize4, .text-module-scss-module__CwSCVG__textSize5, .text-module-scss-module__CwSCVG__textSize6, .text-module-scss-module__CwSCVG__textSize7, .text-module-scss-module__CwSCVG__textSize8, .text-module-scss-module__CwSCVG__textSize9, .text-module-scss-module__CwSCVG__textSize10, .text-module-scss-module__CwSCVG__textSize11, .text-module-scss-module__CwSCVG__textSize12, .text-module-scss-module__CwSCVG__textSize13, .text-module-scss-module__CwSCVG__textSize14 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize15 {
+  font-size: .875rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize15 {
+    font-size: .875rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize15 {
+    font-size: .875rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize15, .text-module-scss-module__CwSCVG__textSize16, .text-module-scss-module__CwSCVG__textSize17, .text-module-scss-module__CwSCVG__textSize18, .text-module-scss-module__CwSCVG__textSize19 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize20 {
+  font-size: .875rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize20 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize20 {
+    font-size: 1.125rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize20, .text-module-scss-module__CwSCVG__textSize21, .text-module-scss-module__CwSCVG__textSize22, .text-module-scss-module__CwSCVG__textSize23, .text-module-scss-module__CwSCVG__textSize24, .text-module-scss-module__CwSCVG__textSize25, .text-module-scss-module__CwSCVG__textSize26, .text-module-scss-module__CwSCVG__textSize27, .text-module-scss-module__CwSCVG__textSize28, .text-module-scss-module__CwSCVG__textSize29 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize30 {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize30 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize30 {
+    font-size: 1.25rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize30, .text-module-scss-module__CwSCVG__textSize31, .text-module-scss-module__CwSCVG__textSize32, .text-module-scss-module__CwSCVG__textSize33, .text-module-scss-module__CwSCVG__textSize34, .text-module-scss-module__CwSCVG__textSize35, .text-module-scss-module__CwSCVG__textSize36, .text-module-scss-module__CwSCVG__textSize37, .text-module-scss-module__CwSCVG__textSize38, .text-module-scss-module__CwSCVG__textSize39 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize40 {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize40 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize40 {
+    font-size: 1.5rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize40, .text-module-scss-module__CwSCVG__textSize41, .text-module-scss-module__CwSCVG__textSize42, .text-module-scss-module__CwSCVG__textSize43, .text-module-scss-module__CwSCVG__textSize44, .text-module-scss-module__CwSCVG__textSize45, .text-module-scss-module__CwSCVG__textSize46, .text-module-scss-module__CwSCVG__textSize47, .text-module-scss-module__CwSCVG__textSize48, .text-module-scss-module__CwSCVG__textSize49 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize50 {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize50 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize50 {
+    font-size: 1.75rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize50, .text-module-scss-module__CwSCVG__textSize51, .text-module-scss-module__CwSCVG__textSize52, .text-module-scss-module__CwSCVG__textSize53, .text-module-scss-module__CwSCVG__textSize54, .text-module-scss-module__CwSCVG__textSize55, .text-module-scss-module__CwSCVG__textSize56, .text-module-scss-module__CwSCVG__textSize57, .text-module-scss-module__CwSCVG__textSize58, .text-module-scss-module__CwSCVG__textSize59 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize60 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize60 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize60 {
+    font-size: 2rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize60, .text-module-scss-module__CwSCVG__textSize61, .text-module-scss-module__CwSCVG__textSize62, .text-module-scss-module__CwSCVG__textSize63, .text-module-scss-module__CwSCVG__textSize64, .text-module-scss-module__CwSCVG__textSize65, .text-module-scss-module__CwSCVG__textSize66, .text-module-scss-module__CwSCVG__textSize67, .text-module-scss-module__CwSCVG__textSize68, .text-module-scss-module__CwSCVG__textSize69 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize70 {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize70 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize70 {
+    font-size: 2.5rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize70, .text-module-scss-module__CwSCVG__textSize71, .text-module-scss-module__CwSCVG__textSize72, .text-module-scss-module__CwSCVG__textSize73, .text-module-scss-module__CwSCVG__textSize74, .text-module-scss-module__CwSCVG__textSize75, .text-module-scss-module__CwSCVG__textSize76, .text-module-scss-module__CwSCVG__textSize77, .text-module-scss-module__CwSCVG__textSize78, .text-module-scss-module__CwSCVG__textSize79 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__textSize80 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .text-module-scss-module__CwSCVG__textSize80 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-module-scss-module__CwSCVG__textSize80 {
+    font-size: 3rem;
+  }
+}
+
+.text-module-scss-module__CwSCVG__textSize80, .text-module-scss-module__CwSCVG__textSize81, .text-module-scss-module__CwSCVG__textSize82, .text-module-scss-module__CwSCVG__textSize83, .text-module-scss-module__CwSCVG__textSize84, .text-module-scss-module__CwSCVG__textSize85, .text-module-scss-module__CwSCVG__textSize86, .text-module-scss-module__CwSCVG__textSize87, .text-module-scss-module__CwSCVG__textSize88, .text-module-scss-module__CwSCVG__textSize89, .text-module-scss-module__CwSCVG__textSize90 {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__font1 {
+  font-family: Helvetica, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__font2 {
+  font-family: Walton, sans-serif;
+}
+
+.text-module-scss-module__CwSCVG__italic {
+  font-style: italic;
+}
+
+.text-module-scss-module__CwSCVG__underline {
+  text-decoration: underline;
+}
+
+.text-module-scss-module__CwSCVG__weight100 {
+  font-weight: 100;
+}
+
+.text-module-scss-module__CwSCVG__weight200 {
+  font-weight: 200;
+}
+
+.text-module-scss-module__CwSCVG__weight300 {
+  font-weight: 300;
+}
+
+.text-module-scss-module__CwSCVG__weight400 {
+  font-weight: 400;
+}
+
+.text-module-scss-module__CwSCVG__weight500 {
+  font-weight: 500;
+}
+
+.text-module-scss-module__CwSCVG__weight600 {
+  font-weight: 600;
+}
+
+.text-module-scss-module__CwSCVG__weight700 {
+  font-weight: 700;
+}
+
+.text-module-scss-module__CwSCVG__weight800 {
+  font-weight: 800;
+}
+
+.text-module-scss-module__CwSCVG__weight900 {
+  font-weight: 900;
+}
+
+.text-module-scss-module__CwSCVG__hover-underline {
+  cursor: pointer;
+}
+
+.text-module-scss-module__CwSCVG__hover-underline:hover {
+  text-decoration: underline;
+}
+
+.text-module-scss-module__CwSCVG__hover-fade {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
+}
+
+.text-module-scss-module__CwSCVG__hover-fade:hover {
+  opacity: .7;
+}
+
+/*# sourceMappingURL=app_components_text_text_module_scss_module_css_0w3-wzy._.single.css.map*/

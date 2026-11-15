@@ -1,0 +1,136 @@
+@use "sass:map";
+@use "./breakpoints" as bp; // Import breakpoints file
+
+$sizes: (
+  0: (base: 0rem, small: 0rem, large: 0rem),
+  1 : (base: 1px, small: 1px, large: 1px), // 2px / 2px / 2px
+  7: (base: 0.125rem, small: 0.125rem, large: 0.25rem), // 2px / 2px / 2px
+  10: (base: 0.25rem, small: 0.25rem, large: 0.375rem), // 4px / 4px / 6px
+  20: (base: 0.5rem, small: 0.625rem, large: 0.75rem),  // 8px / 10px / 12px
+  30: (base: 0.75rem, small: 0.875rem, large: 1rem),    // 12px / 14px / 16px
+  40: (base: 1rem, small: 1.125rem, large: 1.25rem),    // 16px / 18px / 20px
+  50: (base: 1.25rem, small: 1.5rem, large: 1.75rem),   // 20px / 24px / 28px
+  60: (base: 1.5rem, small: 1.75rem, large: 2rem),      // 24px / 28px / 32px
+  70: (base: 2rem, small: 2.25rem, large: 2.5rem),      // 32px / 36px / 40px
+) !default;
+
+
+/* Mixin for Responsive Sizes */
+@mixin responsive-size($property, $size-key) {
+  $size-values: map.get($sizes, $size-key);
+
+  @if not $size-values {
+    // @warn "Size `#{$size-key}` not found. Available sizes: #{map.keys($sizes)}.";
+  } @else {
+    // Base size
+    #{$property}: map.get($size-values, base);
+
+    // Responsive sizes
+    @each $break, $width in bp.$breakpoints {
+      @media (min-width: $width) {
+        #{$property}: map.get($size-values, $break);
+      }
+    }
+  }
+}
+
+$small-sizes: (
+  0: (base: 0px, small: 0px, large: 0px),
+  1: (base: 1px, small: 1px, large: 1px),
+  5: (base: 0.5px, small: 1px, large: 1.5px),
+  10: (base: 1px, small: 2px, large: 3px),
+  20: (base: 2px, small: 3px, large: 4px),
+  30: (base: 3px, small: 4px, large: 5px),
+  40: (base: 4px, small: 5px, large: 6px),
+  50: (base: 5px, small: 6px, large: 7px),
+  60: (base: 6px, small: 7px, large: 8px)
+) !default;
+
+/* Mixin for Responsive Sizes */
+@mixin responsive-small($property, $size-key) {
+  $size-values: map.get($small-sizes, $size-key);
+
+  @if not $size-values {
+    // @warn "Size `#{$size-key}` not found. Available sizes: #{map.keys($sizes)}.";
+  } @else {
+    // Base size
+    #{$property}: map.get($size-values, base);
+
+    // Responsive sizes
+    @each $break, $width in bp.$breakpoints {
+      @media (min-width: $width) {
+        #{$property}: map.get($size-values, $break);
+      }
+    }
+  }
+}
+
+$font-sizes: (
+  0: (base: 0rem, small: 0rem, large: 0rem),    0// 0 → 0 → 0px
+  10: (base: 0.75rem, small: 0.75rem, large: 0.875rem),    // 12 → 12 → 14px
+  15: (base: 0.875rem, small: 0.875rem, large: 0.875rem),       // 14 → 14 → 16px
+  20: (base: 0.875rem, small: 1rem, large: 1.125rem),       // 14 → 16 → 18px
+  30: (base: 1rem, small: 1.125rem, large: 1.25rem),        // 16 → 18 → 20px
+  40: (base: 1.125rem, small: 1.25rem, large: 1.5rem),      // 18 → 20 → 24px
+  50: (base: 1.25rem, small: 1.5rem, large: 1.75rem),       // 20 → 24 → 28px
+  60: (base: 1.5rem, small: 1.75rem, large: 2rem),         // 24 → 28 → 32px
+  70: (base: 1.75rem, small: 2rem, large: 2.5rem),         // 28 → 32 → 40px
+  80: (base: 2rem, small: 2.5rem, large: 3rem),            // 32 → 40 → 48px
+);
+
+/* Mixin for Responsive Sizes */
+@mixin responsive-font($property, $size-key) {
+  $size-values: map.get($font-sizes, $size-key);
+
+  @if not $size-values {
+    // @warn "Size `#{$size-key}` not found. Available sizes: #{map.keys($sizes)}.";
+  } @else {
+    // Base size
+    #{$property}: map.get($size-values, base);
+
+    // Responsive sizes
+    @each $break, $width in bp.$breakpoints {
+      @media (min-width: $width) {
+        #{$property}: map.get($size-values, $break);
+      }
+    }
+  }
+}
+
+$large-sizes: (
+  0: (base: 0rem, small: 0rem, large: 0rem),
+  1: (base: 1.5rem, small: 1.75rem, large: 2rem),
+  3: (base: 2rem, small: 2.5rem, large: 3rem),
+  5: (base: 2.5rem, small: 3.125rem, large: 3.75rem),
+  7: (base: 3rem, small: 3.75rem, large: 4.5rem),
+  10: (base: 4rem, small: 5rem, large: 6rem),
+  20: (base: 5rem, small: 6.25rem, large: 7.5rem),
+  30: (base: 6rem, small: 7.5rem, large: 9rem),
+  40: (base: 7rem, small: 8.75rem, large: 10.5rem),
+  50: (base: 8rem, small: 10rem, large: 12rem),
+  60: (base: 9rem, small: 11.25rem, large: 13.5rem),
+  70: (base: 10rem, small: 12.5rem, large: 15rem),
+  80: (base: 12rem, small: 15rem, large: 18rem),
+  90: (base: 14rem, small: 17.5rem, large: 21rem),
+  100: (base: 100%, small: 50%, large: 33%),
+  101: (base: 100%, small: 45%, large: 4%),
+) !default;
+
+/* Mixin for Responsive Sizes */
+@mixin responsive-large($property, $size-key) {
+  $size-values: map.get($large-sizes, $size-key);
+
+  @if not $size-values {
+    // @warn "Size `#{$size-key}` not found. Available sizes: #{map.keys($sizes)}.";
+  } @else {
+    // Base size
+    #{$property}: map.get($size-values, base);
+
+    // Responsive sizes
+    @each $break, $width in bp.$breakpoints {
+      @media (min-width: $width) {
+        #{$property}: map.get($size-values, $break);
+      }
+    }
+  }
+}

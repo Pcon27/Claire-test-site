@@ -1,0 +1,75 @@
+@use "../../styles/sizes" as s;
+
+// FILL ===========================================
+.fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// OBJECT FIT ===========================================
+$object-fits: (contain, cover, fill, none, scale-down);
+@each $fit in $object-fits {
+  .objectFit-#{$fit} {
+    object-fit: $fit;
+  }
+}
+
+// BORDER RADIUS ===========================================
+@for $i from 0 through 60 {
+  .radius#{$i} {
+    @include s.responsive-size(border-radius, $i);
+  }
+}
+
+// WIDTH & HEIGHT ===========================================
+@for $i from 0 through 90 {
+  .width#{$i} {
+    @include s.responsive-large(width, $i);
+  }
+  .height#{$i} {
+    @include s.responsive-large(height, $i);
+  }
+}
+
+// MAX WIDTH & MAX HEIGHT ===========================================
+@for $i from 0 through 90 {
+  .maxWidth#{$i} {
+    @include s.responsive-large(max-width, $i);
+  }
+  .maxHeight#{$i} {
+    @include s.responsive-large(max-height, $i);
+  }
+}
+
+// MIN WIDTH & MIN HEIGHT ===========================================
+@for $i from 0 through 80 {
+  .minWidth#{$i} {
+    @include s.responsive-large(min-width, $i);
+  }
+  .minHeight#{$i} {
+    @include s.responsive-large(min-height, $i);
+  }
+}
+
+// =========================================== SMALL SIZES ===========================================
+@for $i from 0 through 80 {
+  .smallWidth#{$i} {
+    @include s.responsive-size(width, $i);
+  }
+  .smallHeight#{$i} {
+    @include s.responsive-size(height, $i);
+  }
+  .smallMaxWidth#{$i} {
+    @include s.responsive-size(max-width, $i);
+  }
+  .smallMaxHeight#{$i} {
+    @include s.responsive-size(max-height, $i);
+  }
+  .smallMinWidth#{$i} {
+    @include s.responsive-size(min-width, $i);
+  }
+  .smallMinHeight#{$i} {
+    @include s.responsive-size(min-height, $i);
+  }
+}

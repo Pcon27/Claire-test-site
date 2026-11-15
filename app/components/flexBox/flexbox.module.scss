@@ -1,0 +1,261 @@
+// colors.module.scss
+@use "../../styles/sizes" as s;
+@use "sass:map";
+
+
+
+// COLORS ===========================================
+// Background Colors
+$background-colors: (
+  0: transparent,
+  1: var(--bg1),
+  2: var(--bg2),
+  3: var(--bg3),
+  4: var(--bg4),
+  5: var(--bg5)
+);
+@each $key, $color in $background-colors {
+  .bg#{$key} {
+    background-color: $color;
+    transition: background-color 0.25s ease;
+  }
+}
+
+
+// Border Colors
+$borderColors: (
+  0: transparent,
+  1: var(--border1),
+  2: var(--border2),
+  3: var(--border3),
+  4: var(--border4),
+  5: var(--border5),
+);
+@each $key, $color in $borderColors {
+  .borderColor#{$key} {
+    border-color: $color;
+  }
+}
+
+// Hover Colors
+$hoverColors: (
+  0: transparent,
+  1: var(--bg1),
+  2: var(--bg2),
+  3: var(--bg3),
+  4: var(--bg4),
+  5: var(--bg5)
+);
+@each $key, $color in $hoverColors {
+  .hover#{$key} {
+    &:hover {
+      background-color: $color;
+      transition: background-color 0.25s ease;
+    }
+  }
+}
+
+
+// SIZES ===========================================
+// Sizes
+$sizes: (
+  0: var(--size0),
+  1: var(--size1),
+  2: var(--size2),
+  3: var(--size3),
+  4: var(--size4),
+  5: var(--size5),
+  6: var(--size6)
+);
+
+
+// internal spacing
+@for $i from 0 through 60 {
+  .size#{$i} {
+    @include s.responsive-size(padding, $i);
+    @include s.responsive-size(border-radius, $i);
+  }
+}
+
+@for $i from 0 through 60 {
+  .radius#{$i} {
+    @include s.responsive-size(border-radius, $i);
+  }
+}
+
+// border spacing
+@for $i from 0 through 60 {
+  .borderWidth#{$i} {
+    @include s.responsive-small(border-width, $i);
+    border-style: solid;
+  }
+}
+
+.noBorder {
+  border: none;
+}
+
+// LAYOUT ===========================================
+// Layout 
+
+.fit {
+  width: fit-content;
+  height: fit-content;
+  max-width: auto;
+  max-height: auto;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+$flex-directions: (row, row-reverse, column, column-reverse);
+// 🎯 Generate flex direction classes
+@each $dir in $flex-directions {
+    .flex-#{$dir} {
+      display: flex;
+      flex-direction: $dir;
+      // flex-wrap: wrap;
+    }
+  }
+
+  $flex-wraps: (wrap, nowrap, wrap-reverse);
+  @each $wrap in $flex-wraps {
+    .flex-#{$wrap} {
+      flex-wrap: $wrap;
+    }
+  }
+
+  $justify-content: (
+    flex-start: flex-start,
+    center: center,
+    flex-end: flex-end,
+    space-between: space-between,
+    space-around: space-around,
+    space-evenly: space-evenly
+  );
+
+// 🎯 Generate justify-content classes
+@each $key, $value in $justify-content {
+    .justify-#{$key} {
+      justify-content: $value;
+    }
+  }
+
+$align-items: (
+  flex-start: flex-start,
+  center: center,
+  flex-end: flex-end,
+  stretch: stretch,
+  baseline: baseline
+);
+
+// 🎯 Generate align-items classes
+@each $key, $value in $align-items {
+    .align-#{$key} {
+      align-items: $value;
+    }
+  }
+
+
+// Gutter and Gap Sizes
+@for $i from 0 through 90 {
+  .gutter-vertical#{$i} {
+    @include s.responsive-size(height, $i);
+    width: 100%;
+  }
+}
+@for $i from 0 through 90 {
+  .gutter-horizontal#{$i} {
+    @include s.responsive-size(width, $i);
+    height: 100%;
+  }
+}
+
+@for $i from 0 through 90 {
+  .gap#{$i} {
+    @include s.responsive-size(gap, $i);
+  }
+}
+
+
+
+// drop shadow
+
+// Border Colors
+$dropShadows: (
+  0: transparent,
+  1: var(--border1),
+  2: var(--border2),
+  3: var(--border3),
+  4: var(--border4),
+  5: var(--border5)
+);
+@each $key, $color in $dropShadows {
+  .dropShadow#{$key} {
+    box-shadow: 4px 4px 0 $color;
+    &:hover {
+      box-shadow: 2px 2px 0 $color;
+      transform: translate(2px, 2px);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+  }
+}
+
+// Disabled state
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+  // transform: translate(4px, 4px);
+}
+
+.hoverBlur {
+  transition: filter 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+// width and Height Utilities
+@for $i from 0 through 101 {
+  .width#{$i} {
+    @include s.responsive-large(width, $i);
+  }
+  .height#{$i} {
+    @include s.responsive-large(height, $i);
+  }
+}
+
+.widthfill {
+  width: 100%;
+}
+
+.heightfill {
+  height: 100%;
+}
+
+@for $i from 0 through 90 {
+  .maxWidth#{$i} {
+    @include s.responsive-large(max-width, $i);
+  }
+  .maxHeight#{$i} {
+    @include s.responsive-large(max-height, $i);
+  }
+}
+
+@for $i from 0 through 90 {
+  .minWidth#{$i} {
+    @include s.responsive-large(min-width, $i);
+  }
+  .minHeight#{$i} {
+    @include s.responsive-large(min-height, $i);
+  }
+}

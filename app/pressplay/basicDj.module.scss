@@ -1,0 +1,59 @@
+@use "../styles/sizes" as s;
+
+.vidsBox {
+  width: 100%;
+  height: 100svh;
+  padding: 0;
+  z-index: 1;
+  video {
+    position: absolute;   // fill the wrapper
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    // scales video like background-size: cover
+  }
+}
+
+.controlsBox {
+  position: absolute;
+  left: 50%;
+  top: calc(10% + 4rem);
+  transform: translate(-50%, 0);
+}
+
+.slider {
+  -webkit-appearance: none;  // remove default styling
+  width: 100%;               // full width
+  @include s.responsive-size(height, 2);         // track height
+  background: #ddd;          // track color
+  border-radius: 4px;        // rounded corners       // no outline on focus
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; // remove default thumb styling
+    width: 20px;              // thumb width
+    height: 40px;
+    @include s.responsive-size(height, 6);
+    @include s.responsive-size(width, 2);
+    background: var(--bg5);      // thumb color
+    cursor: pointer;          // cursor on hover
+    border-radius: 25%;       // circular thumb
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 05);
+  }
+
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--bg4);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+  }
+
+  .SelectionBox {
+    background-color: aqua;
+    padding: 10rem;
+  }
+
+}

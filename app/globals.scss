@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Walton TFF';
+  src: url('/fonts/Walton.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$lightA: #f7f7f7;
+$darkA: #3e52e4;
+$darkB: #1d2563;
+$lightB: #bbbfe3;
+$darkC: #0f1331;
+
+
+
+/* Light Mode (default) */
+:root {
+  --bg1: #{$lightA};
+  --bg2: #{$lightB};
+  --bg3: #{$darkA};
+  --bg4: #{$darkB};
+  --bg5: #{$darkC};
+  // Text Colors
+  --text1: #{$darkA};
+  --text2: #{$darkB};
+  --text3: #{$lightA};
+  --text4: #{$lightB};
+  --text5: #{$darkC};
+  // Border Colors
+  --border1: #{$darkA};
+  --border2: #{$darkB};
+  --border3: #{$lightA};
+  --border4: #{$lightB};
+  --border5: #{$darkC};
+  // Link Colors
+  --link1: #{$darkA};
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --bg1: #{$darkA};
+  --bg2: #{$darkB};
+  --bg3: #{$lightA};
+  --bg4: #{$lightB};
+  --bg5: #{$darkC};
+  // Text Colors
+  --text1: #{$lightA};
+  --text2: #{$lightB};
+  --text3: #{$darkA};
+  --text4: #{$darkB};
+  --text5: #{$darkC};
+  // Border Colors
+  --border1: #{$lightA};
+  --border2: #{$lightB};
+  --border3: #{$darkA};
+  --border4: #{$darkB};
+  --border5: #{$darkC};
+  // Link Colors
+  --link1: #{$lightA};
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: clip;
+  margin: 0;
+}
+
+body {
+  color: var(--text1);
+  background: var(--bg3);
+  font-family: 'Walton TFF', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/app/portfolio/Modal.module.scss"],"sourcesContent":[".backdrop {\n  position: fixed;\n  inset: 0;\n  z-index: 1000;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.9);\n  backdrop-filter: blur(12px);\n  -webkit-backdrop-filter: blur(12px);\n}\n\n.modal {\n  position: relative;\n  width: min(90vw, 1100px);\n  aspect-ratio: 16 / 9;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);\n}\n\n.video {\n  width: 100%;\n  height: 100%;\n  border: none;\n  display: block;\n}\n\n.close {\n  position: absolute;\n  top: 12px;\n  right: 12px;\n  z-index: 10;\n  width: 36px;\n  height: 36px;\n  border-radius: 50%;\n  border: none;\n  background: rgba(0, 0, 0, 0.6);\n  color: #fff;\n  font-size: 16px;\n  line-height: 1;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: background 0.15s;\n\n  &:hover {\n    background: rgba(0, 0, 0, 0.9);\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;;;AAYA;;;;;;;;;AASA;;;;;;;AAOA;;;;;;;;;;;;;;;;;;;;AAmBE"}}]
+}

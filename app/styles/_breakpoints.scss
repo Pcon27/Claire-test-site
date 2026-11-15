@@ -1,0 +1,17 @@
+@use "sass:map";
+
+/* _breakpoints.scss */
+$breakpoints: (
+  small: 768px,
+  large: 1200px,
+) !default;
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint `#{$breakpoint}`. Available: #{map.keys($breakpoints)}.";
+  }
+}
