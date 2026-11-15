@@ -4,7 +4,7 @@ import clsx from "clsx";
 import imageStyles from "./images.module.scss";
 
 type ImageProps = {
-  src: string;
+  src: string | null;
   alt: string;
   width?: 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | "fill";
   height?: 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | "fill";
@@ -25,7 +25,7 @@ type ImageProps = {
 };
 
 const CustomImage = ({
-  src,
+  src = null,
   alt,
   width = 40,
   height = 40,
