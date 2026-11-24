@@ -16,6 +16,7 @@ interface TTextProps {
   underline?: boolean; // 🎯 added underline prop
   hoverColor?: 0 | 1 | 2 | 3 | 4 | 5; // 🎯 added hoverColor prop
   fontFamily?: 1 | 2; // 🎯 added fontFamily prop
+  align?: "start" | "end" | "center" | "justify";
 }
 
 const Text = ({
@@ -30,6 +31,7 @@ const Text = ({
   style,
   hoverColor,
   fontFamily = 1,
+  align = "start",
 }: TTextProps) => {
   const className = clsx(
     customClass,
@@ -42,6 +44,7 @@ const Text = ({
     hover && fontStyles[`hover-${hover}`],
     hoverColor && fontStyles[`hoverText${hoverColor}`], // 🎯 added hover color class
     fontFamily === 1 ? fontStyles.font1 : fontStyles.font2, // 🎯 added font family class
+    fontStyles[`align${align}`],
   );
   const tag = size > 5 ? "h1" : size > 4 ? "h2" : "p";
 

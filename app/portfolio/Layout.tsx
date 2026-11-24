@@ -2,7 +2,6 @@
 
 import Card from "../components/flexBox/Card";
 import Text from "../components/text/Text";
-import Resume from "../resume/page";
 import FunSection from "./FunSection";
 import Opinions from "./Opinions";
 import Projects from "./Projects";

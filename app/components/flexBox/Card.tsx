@@ -31,7 +31,7 @@ type CardProps = {
   customClass?: string;
   fit?: "fit" | "fill";
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   gap?: number; // New prop for gap
   flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
   style?: React.CSSProperties;

@@ -29,11 +29,12 @@ const SingleResume = ({
   return (
     <Card
       flexDirection="column"
-      alignItems="flex-start"
-      onClick={onClick}
-      width={"fill"}
+      alignItems="center"
+      // onClick={onClick}
+      width={90}
       backgroundColor={4}
-      dropShadow={5}
+      // dropShadow={5}
+      radius={0}
     >
       {resume.image && (
         <CustomImage
@@ -41,17 +42,22 @@ const SingleResume = ({
           alt={resume?.company ?? "image"}
         />
       )}
-      {isExpanded && (
-        <Card size={10} gap={10}>
-          <Text color={3} weight={700}>
-            {resume?.company}
-          </Text>
-          <Text color={3}>{resume?.role}</Text>
-          <Text color={3} size={30}>
-            {resume?.years}
-          </Text>
-        </Card>
-      )}
+      {/* {isExpanded && ( */}
+      <Card
+        size={60}
+        gap={10}
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        flexDirection="column"
+      >
+        <Text color={4} align="start">
+          {resume.company}
+        </Text>
+        <Text color={4}>{resume.role}</Text>
+        <Text color={4}>{resume.bullets}</Text>
+        <Text color={4}>{resume.years}</Text>
+      </Card>
+      {/* )} */}
     </Card>
   );
 };
@@ -61,29 +67,35 @@ export default function ResumeBits() {
   return (
     <Card flexDirection="column" width={"fill"} backgroundColor={3}>
       <SectionHeader title="Resume" />
-      <Card
-        flexDirection="row"
-        flexWrap="wrap"
-        justifyContent="space-evenly"
-        width={"fill"}
-        backgroundColor={2}
-        // gap={10}
-        size={40}
-      >
-        {resumeData.map((project, index) => (
-          <Card key={index}>
-            <SingleResume
-              resume={project}
-              onClick={() =>
-                setExpanded((current) =>
-                  current === index ? resumeData.length : index,
-                )
-              }
-              isExpanded={expanded === index}
-            />
-          </Card>
-        ))}
+      <Card backgroundColor={0} size={0}>
+        {/* <Card backgroundColor={4} radius={0} width={"fill"}>
+          <Text color={3}>{resumeData[expanded]?.role}</Text>
+        </Card> */}
+        <Card
+          flexDirection="row"
+          flexWrap="wrap"
+          justifyContent="space-evenly"
+          width={"fill"}
+          backgroundColor={0}
+          size={0}
+          gap={40}
+        >
+          {resumeData.map((project, index) => (
+            <Card key={index} size={0} backgroundColor={0}>
+              <SingleResume
+                resume={project}
+                onClick={() =>
+                  setExpanded((current) =>
+                    current === index ? resumeData.length : index,
+                  )
+                }
+                isExpanded={expanded === index}
+              />
+            </Card>
+          ))}
+        </Card>
       </Card>
+      <Gutter size={20} />
     </Card>
   );
 }
