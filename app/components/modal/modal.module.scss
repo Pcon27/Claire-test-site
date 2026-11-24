@@ -1,0 +1,86 @@
+@use "../../styles/breakpoints" as bp;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  background: rgba(15, 19, 49, 0.8); // $darkC
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.2s ease-out;
+
+  @include bp.breakpoint(small) {
+    padding: 2rem;
+  }
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  width: min(960px, 100%);
+  max-height: 100%;
+  min-height: 0;
+}
+
+.panel {
+  flex: 1 1 auto;
+  width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 8px 8px 0 var(--bg3);
+  animation: riseIn 0.25s ease-out;
+}
+
+.header {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border3);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.close {
+  flex-shrink: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .panel {
+    animation: none;
+  }
+}

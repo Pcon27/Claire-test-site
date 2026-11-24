@@ -49,6 +49,7 @@ type CardProps = {
   ref?: React.Ref<HTMLDivElement | HTMLButtonElement>;
   hoverBlur?: boolean; // New prop for hover blur effect
   hoverColor?: 0 | 1 | 2 | 3 | 4 | 5; // New prop for hover color effect
+  boxSizing?: "border-box" | "content-box";
 };
 
 const Card = ({
@@ -84,6 +85,7 @@ const Card = ({
   ref,
   hoverBlur,
   hoverColor,
+  boxSizing = "border-box",
 }: CardProps) => {
   const className = clsx(
     customClass,
@@ -111,6 +113,7 @@ const Card = ({
     minHeight && flexStyles[`minHeight${minHeight}`],
     hoverBlur && flexStyles.hoverBlur, // Add hover blur class if prop is true
     hoverColor && flexStyles[`hover${hoverColor}`], // Add hover color class if prop is provided
+    boxSizing && flexStyles[`${boxSizing}`],
   );
 
   const Wrapper = onClick ? "button" : "div";

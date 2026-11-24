@@ -259,3 +259,11 @@ $dropShadows: (
     @include s.responsive-large(min-height, $i);
   }
 }
+
+.content-box {
+  box-sizing: content-box;
+}
+
+.border-box {
+  box-sizing: border-box;
+}

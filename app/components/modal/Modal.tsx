@@ -1,72 +1,93 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../flexBox/Card";
+import Text from "../text/Text";
+import modalStyles from "./modal.module.scss";
 
 type ModalProps = {
   open: boolean;
   onClose: () => void;
+  title?: string;
+  backgroundColor?: 1 | 2 | 3 | 4 | 5;
   children?: React.ReactNode;
 };
 
-const Modal = ({ open, onClose, children }: ModalProps) => {
+const Modal = ({
+  open,
+  onClose,
+  title,
+  backgroundColor = 4,
+  children,
+}: ModalProps) => {
+  // Close on Escape and lock page scroll while the modal is open
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open, onClose]);
+
   if (!open) return null;
 
   return (
     <div
+      className={modalStyles.backdrop}
       // Only close when the backdrop itself is clicked, not the modal content
       onClick={(e) => e.target === e.currentTarget && onClose()}
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: 1000,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "rgba(0, 0, 0, 0.85)",
-        // 2rem gutter between the modal and the viewport edges
-        padding: "2rem",
-        boxSizing: "border-box",
-      }}
     >
       <div
-        // Column that's capped at the padded viewport size; the close button
-        // stays in flow above the card so it never gets pushed off-screen
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 8,
-          maxWidth: "100%",
-          maxHeight: "100%",
-          minHeight: 0,
-        }}
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
+        className={modalStyles.dialog}
       >
-        {/* Close button sits just above the modal's top-right corner */}
         <Card
-          onClick={onClose}
-          style={{
-            alignSelf: "flex-end",
-            flexShrink: 0,
-            width: 40,
-            height: 40,
-          }}
-          hoverBlur
+          customClass={modalStyles.panel}
+          backgroundColor={backgroundColor}
+          borderColor={3}
+          radius={0}
+          size={0}
+          flexDirection="column"
+          alignItems="stretch"
         >
-          ×
-        </Card>
-        <Card
-          size={60}
-          backgroundColor={2}
-          style={{
-            // Scroll inside the modal when content is taller/wider than the space
-            maxWidth: "100%",
-            maxHeight: "100%",
-            minHeight: 0,
-            overflow: "auto",
-            boxSizing: "border-box",
-          }}
-        >
-          {children}
+          {/* Header bar stays put while the body scrolls */}
+          <Card
+            customClass={modalStyles.header}
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="space-between"
+            width="fill"
+            size={40}
+            radius={0}
+            gap={20}
+          >
+            <Text color={3} size={20} weight={600}>
+              {title}
+            </Text>
+            <Card
+              customClass={modalStyles.close}
+              onClick={onClose}
+              backgroundColor={backgroundColor}
+              borderColor={3}
+              dropShadow={3}
+              flexDirection="row"
+              alignItems="center"
+              size={20}
+              radius={0}
+              gap={10}
+            >
+              <Text color={3} size={15} weight={600}>
+                Close ✕
+              </Text>
+            </Card>
+          </Card>
+          <div className={modalStyles.body}>{children}</div>
         </Card>
       </div>
     </div>

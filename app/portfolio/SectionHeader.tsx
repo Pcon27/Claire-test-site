@@ -13,7 +13,13 @@ export default function SectionHeader({
   children?: React.ReactNode;
 }) {
   return (
-    <Card width="fill" flexDirection="column" alignItems="flex-start">
+    <Card
+      width="fill"
+      flexDirection="column"
+      alignItems="flex-start"
+      // boxSizing="content-box"
+      // style={{ boxSizing: "border-box" }}
+    >
       <Card
         size={0}
         flexDirection="row"
